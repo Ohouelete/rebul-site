@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REBUL — Regroupement des étudiant·es béninois·es de l'Université Laval</title>
+  <meta name="description" content="Le REBUL accueille les étudiant·es béninois·es à l'Université Laval, organise des événements et fait rayonner la culture béninoise sur le campus.">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="tricolore" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<header class="entete">
+  <div class="wrap">
+    <a href="#accueil" class="logo"><img src="logo.png" alt="REBUL — Regroupement des étudiant·es béninois·es de l'Université Laval"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#evenements">Événements</a>
+      <a href="#actualites">Actualités</a>
+      <a href="#guide">Guide d'accueil</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <a href="connexion.html" class="btn btn-contour">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        Connexion
+      </a>
+      <a href="#adhesion" class="btn btn-plein">Devenir membre</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="accueil" class="section alt heros">
+    <div class="wrap">
+      <div class="heros-texte">
+        <p class="surtitre">Université Laval · Québec</p>
+        <h1>Ta communauté béninoise à l'Université Laval</h1>
+        <p class="muted">On accueille les nouveaux, on organise des événements et on fait rayonner la culture béninoise sur le campus.</p>
+        <div class="boutons">
+          <a href="#adhesion" class="btn btn-lg btn-plein">Devenir membre</a>
+          <a href="#guide" class="btn btn-lg btn-contour">J'arrive à Québec</a>
+        </div>
+      </div>
+      <aside class="carte-evt" aria-label="Prochain événement">
+        <span class="pastille">Prochain événement</span>
+        <div class="evt-ligne">
+          <div class="date-bloc"><b>[JJ]</b><small>[mois]</small></div>
+          <h2>[Nom de l'événement]</h2>
+        </div>
+        <p class="muted">[Heure] · [Lieu, pavillon]</p>
+        <a href="#evenements" class="lien-fort">Voir tous les événements →</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="apropos" class="section">
+    <div class="wrap">
+      <div class="intro">
+        <h2 class="h2">Notre mission</h2>
+        <p class="muted">[Phrase de mission de l'association, 1 à 2 lignes.]</p>
+      </div>
+      <div class="grille g3">
+        <div class="valeur">
+          <div class="barre" style="background: var(--vert)" aria-hidden="true"></div>
+          <h3>Accueillir</h3>
+          <p class="muted">Accompagner les nouveaux étudiant·es, de l'admission jusqu'aux premiers mois à Québec.</p>
+        </div>
+        <div class="valeur">
+          <div class="barre" style="background: #E8B923" aria-hidden="true"></div>
+          <h3>Rassembler</h3>
+          <p class="muted">Créer des occasions de se retrouver : soirées, sport, entraide et réseautage.</p>
+        </div>
+        <div class="valeur">
+          <div class="barre" style="background: var(--rouge)" aria-hidden="true"></div>
+          <h3>Faire rayonner</h3>
+          <p class="muted">Partager la culture béninoise avec toute la communauté de l'Université Laval.</p>
+        </div>
+      </div>
+      <p style="margin-top: 32px"><a href="#apropos" class="lien-fort">Rencontrer le bureau [année] →</a></p>
+    </div>
+  </section>
+
+  <section id="actualites" class="section alt">
+    <div class="wrap">
+      <div class="titre-ligne">
+        <h2 class="h2">Actualités</h2>
+        <a href="#actualites" class="lien-fort">Toutes les actualités →</a>
+      </div>
+      <div class="grille g-actu">
+        <article class="actu">
+          <div class="photo">[Photo]</div>
+          <div class="corps">
+            <p class="meta"><b>Vie associative</b> · [date]</p>
+            <h3>[Titre de l'actualité 1]</h3>
+            <a href="#actualites" class="lien-fort">Lire la suite</a>
+          </div>
+        </article>
+        <article class="actu">
+          <div class="photo">[Photo]</div>
+          <div class="corps">
+            <p class="meta"><b>Événement</b> · [date]</p>
+            <h3>[Titre de l'actualité 2]</h3>
+            <a href="#actualites" class="lien-fort">Lire la suite</a>
+          </div>
+        </article>
+        <article class="actu">
+          <div class="photo">[Photo]</div>
+          <div class="corps">
+            <p class="meta"><b>Opportunité</b> · [date]</p>
+            <h3>[Titre de l'actualité 3]</h3>
+            <a href="#actualites" class="lien-fort">Lire la suite</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="evenements" class="section">
+    <div class="wrap">
+      <h2 class="h2" style="margin-bottom: 28px">Événements à venir</h2>
+      <div class="evts">
+        <div class="evt">
+          <span class="quand">[date]</span>
+          <span class="quoi">[Soirée d'intégration des nouveaux]</span>
+          <span class="muted">[Lieu]</span>
+          <a href="#evenements" class="btn btn-contour">Détails</a>
+        </div>
+        <div class="evt">
+          <span class="quand">[date]</span>
+          <span class="quoi">[Soirée culturelle béninoise]</span>
+          <span class="muted">[Lieu]</span>
+          <a href="#evenements" class="btn btn-contour">Détails</a>
+        </div>
+        <div class="evt">
+          <span class="quand">[date]</span>
+          <span class="quoi">[Assemblée générale]</span>
+          <span class="muted">[Lieu]</span>
+          <a href="#evenements" class="btn btn-contour">Détails</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="section guide">
+    <div class="wrap">
+      <div class="intro">
+        <h2 class="h2">Guide d'accueil</h2>
+        <p class="muted">Tout ce qu'on aurait aimé savoir avant d'arriver à Québec.</p>
+      </div>
+      <div class="grille g-guide">
+        <a href="#guide" class="tuile"><b>Logement</b><span>Trouver un appartement ou une résidence</span></a>
+        <a href="#guide" class="tuile"><b>CAQ et permis d'études</b><span>Les démarches, dans l'ordre</span></a>
+        <a href="#guide" class="tuile"><b>Banque et téléphone</b><span>Ouvrir un compte, choisir un forfait</span></a>
+        <a href="#guide" class="tuile"><b>Transport</b><span>Bus RTC et laissez-passer étudiant</span></a>
+        <a href="#guide" class="tuile"><b>Survivre à l'hiver</b><span>S'habiller, où acheter, à quoi s'attendre</span></a>
+        <a href="#guide" class="tuile"><b>Emploi étudiant</b><span>Travailler pendant les études</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="adhesion" class="section">
+    <div class="wrap">
+      <div class="bandeau">
+        <div>
+          <h2 class="h2">Rejoins le REBUL</h2>
+          <p>Cotisation : [montant] / année · Accès aux événements, au groupe d'entraide et au réseau des anciens.</p>
+        </div>
+        <a href="#adhesion" class="btn btn-lg btn-noir">Remplir le formulaire</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="pied">
+  <div class="wrap">
+    <div class="cols">
+      <div class="col">
+        <img src="logo.png" alt="REBUL" class="logo-pied">
+        <p class="muted">Regroupement des étudiant·es béninois·es de l'Université Laval</p>
+      </div>
+      <div class="col">
+        <h3>Nous joindre</h3>
+        <a href="mailto:[courriel@rebul.ca]">[courriel@rebul.ca]</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+      <div class="col">
+        <h3>Liens utiles</h3>
+        <a href="https://www.bve.ulaval.ca/">Bureau de la vie étudiante</a>
+        <a href="https://www.ulaval.ca/international">International — UL</a>
+        <a href="#">Ambassade du Bénin au Canada</a>
+      </div>
+    </div>
+    <p class="copy">© <span id="annee">2026</span> REBUL</p>
+  </div>
+</footer>
+
+<script>document.getElementById('annee').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion — REBUL</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="connexion">
+  <div class="gauche">
+    <a href="index.html">← Retour au site</a>
+    <div class="stack" style="max-width: 440px">
+      <h1>Espace de publication</h1>
+      <p>Publie les actualités, ajoute des événements et mets à jour la galerie du site.</p>
+    </div>
+    <div class="tricolore" aria-hidden="true"><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="droite">
+    <!-- Maquette : la vraie authentification sera branchée plus tard (ex. Decap CMS). -->
+    <form action="publier.html" method="get" aria-label="Connexion">
+      <img src="logo.png" alt="REBUL">
+      <div>
+        <h2 style="font-size: 28px; font-weight: 600">Connexion</h2>
+        <p class="muted" style="font-size: 15px">Réservé aux membres du bureau.</p>
+      </div>
+      <div class="champ">
+        <label for="email">Courriel</label>
+        <input id="email" type="email" placeholder="prenom.nom@ulaval.ca" autocomplete="username">
+      </div>
+      <div class="champ">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <label for="pwd">Mot de passe</label>
+          <a href="#" style="font-size: 14px; font-weight: 600">Mot de passe oublié ?</a>
+        </div>
+        <input id="pwd" type="password" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <label class="case"><input type="checkbox"> Rester connecté</label>
+      <button type="submit" class="btn btn-lg btn-plein">Se connecter</button>
+      <p class="muted" style="font-size: 14px">Pas encore d'accès ? Demande au président ou au responsable communication de t'inviter.</p>
+    </form>
+  </div>
+</div>
+</body>
+</html>
