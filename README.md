@@ -7,7 +7,7 @@ Site statique (HTML/CSS), hébergé avec GitHub Pages.
 ## Pages
 
 - `index.html` — accueil : mission, actualités, événements, guide d'accueil, adhésion, contact
-- `connexion.html` — connexion à l'espace de publication (maquette)
+- `connexion.html` — connexion à l'espace de publication (maquette). Aucun lien sur le site public : le bureau y accède par l'adresse directe `/connexion.html`.
 - `publier.html` — publication d'une actualité (maquette)
 
 ## Modifier le contenu
