@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devenir membre — REBUL</title>
+  <meta name="description" content="Adhère au REBUL, le Regroupement des étudiant·es béninois·es de l'Université Laval.">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="tricolore" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<header class="entete">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="logo.png" alt="REBUL — Retour à l'accueil"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#bureau">Le bureau</a>
+      <a href="index.html#evenements">Événements</a>
+      <a href="index.html#guide">Guide d'accueil</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="section alt">
+  <div class="wrap inscription">
+    <div class="inscription-intro">
+      <p class="surtitre">Adhésion [année]</p>
+      <h1>Devenir membre du REBUL</h1>
+      <p class="muted">Remplis le formulaire. Le bureau valide ton adhésion et te contacte par courriel.</p>
+      <ul class="avantages">
+        <li>Accès aux événements et soirées</li>
+        <li>Groupe d'entraide et de parrainage</li>
+        <li>Réseau des anciens</li>
+      </ul>
+      <p class="muted">Cotisation : [montant] / année</p>
+    </div>
+
+    <!--
+      FORMULAIRE NON BRANCHÉ.
+      Pour l'activer chez le futur hébergeur : retirer data-inactif, mettre l'adresse du traitement dans action,
+      et garder method="post" + enctype="multipart/form-data" (nécessaires pour le fichier).
+      Les pièces d'identité doivent être stockées de façon privée et supprimées après validation (Loi 25).
+    -->
+    <form class="panneau" id="form-inscription" action="" method="post" enctype="multipart/form-data" data-inactif>
+      <div class="deux">
+        <div class="champ">
+          <label for="prenom">Prénom</label>
+          <input id="prenom" name="prenom" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="champ">
+          <label for="nom">Nom</label>
+          <input id="nom" name="nom" type="text" autocomplete="family-name" required>
+        </div>
+      </div>
+
+      <div class="champ">
+        <label for="courriel">Courriel</label>
+        <input id="courriel" name="courriel" type="email" autocomplete="email" placeholder="prenom.nom@ulaval.ca" required>
+        <span class="aide">Pour confirmer ton adhésion.</span>
+      </div>
+
+      <div class="champ">
+        <label for="piece-type">Pièce justificative</label>
+        <select id="piece-type" name="piece_type" required>
+          <option value="">Choisir…</option>
+          <option>Carte nationale d'identité (CNI)</option>
+          <option>Passeport</option>
+          <option>Acte de naissance</option>
+          <option>Autre</option>
+        </select>
+        <span class="aide">Une preuve de nationalité ou d'origine béninoise.</span>
+      </div>
+
+      <div class="champ">
+        <span class="etiquette">Fichier de la pièce</span>
+        <label class="depot" for="piece">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 20h16"/></svg>
+          <span id="piece-nom"><b>Choisir un fichier</b></span>
+          <span style="font-size: 13px">JPG, PNG ou PDF · 5 Mo max</span>
+        </label>
+        <input id="piece" name="piece" type="file" accept="image/jpeg,image/png,application/pdf" required class="visuellement-cache">
+      </div>
+
+      <label class="case consentement">
+        <input type="checkbox" name="consentement" required>
+        <span>J'accepte que le REBUL utilise ma pièce uniquement pour vérifier mon adhésion. Elle est supprimée une fois l'adhésion validée.</span>
+      </label>
+
+      <button type="submit" class="btn btn-lg btn-plein">Envoyer ma demande</button>
+      <p id="message" class="avis" role="status" hidden></p>
+      <p class="muted" style="font-size: 14px">Une question ? Écris-nous à <a href="mailto:[courriel@rebul.ca]">[courriel@rebul.ca]</a>.</p>
+    </form>
+  </div>
+</main>
+
+<script>
+  const form = document.getElementById('form-inscription');
+  const fichier = document.getElementById('piece');
+  const nomFichier = document.getElementById('piece-nom');
+  const message = document.getElementById('message');
+
+  fichier.addEventListener('change', () => {
+    const f = fichier.files[0];
+    if (!f) { nomFichier.innerHTML = '<b>Choisir un fichier</b>'; return; }
+    if (f.size > 5 * 1024 * 1024) {
+      fichier.value = '';
+      nomFichier.innerHTML = '<b>Choisir un fichier</b>';
+      message.hidden = false;
+      message.textContent = 'Le fichier dépasse 5 Mo. Choisis un fichier plus léger.';
+      return;
+    }
+    message.hidden = true;
+    nomFichier.textContent = f.name;
+  });
+
+  form.addEventListener('submit', (e) => {
+    if (form.hasAttribute('data-inactif')) {
+      e.preventDefault();
+      message.hidden = false;
+      message.textContent = "Les inscriptions en ligne ouvrent bientôt. Rien n'a été envoyé. En attendant, écris-nous par courriel.";
+    }
+  });
+</script>
+</body>
+</html>
