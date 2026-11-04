@@ -222,3 +222,5 @@ img { max-width: 100%; }
   .connexion .gauche { padding: 40px 24px; }
   .connexion .gauche h1 { font-size: 34px; }
 }
+
+.envoi { border-top: 1px solid var(--bord); padding-top: 18px; display: flex; flex-direction: column; gap: 4px; }

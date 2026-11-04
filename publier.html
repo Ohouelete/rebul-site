@@ -44,10 +44,10 @@
     <main class="admin-main">
       <p class="avis">Maquette : la publication n'est pas encore branchée.</p>
       <div class="titre-ligne" style="margin-bottom: 0; align-items: center">
-        <h1>Nouvelle actualité</h1>
+        <h1>Nouvelle publication</h1>
         <div style="display: flex; gap: 10px">
           <button type="button" class="btn btn-contour">Enregistrer le brouillon</button>
-          <button type="button" class="btn btn-plein">Publier</button>
+          <button type="button" class="btn btn-plein" id="btn-publier">Publier et envoyer</button>
         </div>
       </div>
 
@@ -60,6 +60,7 @@
           <div class="champ">
             <label for="cat">Catégorie</label>
             <select id="cat">
+              <option>Communiqué</option>
               <option>Vie associative</option>
               <option>Événement</option>
               <option>Opportunité</option>
@@ -93,8 +94,16 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
               </button>
             </div>
-            <textarea id="contenu" rows="8" placeholder="Rédige ton actualité ici…"></textarea>
+            <textarea id="contenu" rows="8" placeholder="Rédige ton communiqué ou ton actualité ici…"></textarea>
           </div>
+        </div>
+        <div class="envoi">
+          <label class="case">
+            <input type="checkbox" id="envoyer" checked>
+            <span><b>Envoyer aussi par courriel à tous les membres</b></span>
+          </label>
+          <p class="aide">Les membres reçoivent le titre, l'image et un lien vers la publication. Chaque courriel contient un lien de désabonnement.</p>
+          <p class="aide" id="destinataires">Destinataires : <b>[nombre]</b> membres inscrits</p>
         </div>
       </form>
     </main>
@@ -108,5 +117,12 @@
     </aside>
   </div>
 </div>
+<script>
+  const caseEnvoi = document.getElementById('envoyer');
+  const btn = document.getElementById('btn-publier');
+  const dest = document.getElementById('destinataires');
+  const maj = () => { btn.textContent = caseEnvoi.checked ? 'Publier et envoyer' : 'Publier'; dest.hidden = !caseEnvoi.checked; };
+  caseEnvoi.addEventListener('change', maj); maj();
+</script>
 </body>
 </html>
